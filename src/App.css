@@ -1,0 +1,220 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(94, 61, 87) rgb(0, 0, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(94, 61, 87);
+  border-radius: 20px;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+/* GLOBAL STYLES */
+
+body,
+.App {
+  font-family: "Inconsolata", monospace;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  color: rgb(134, 167, 166);
+  background: #202124;
+}
+
+.sidebar-buttons button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 10px 0px 0px 20px;
+  font-size: 19px;
+  font-family: inherit;
+  cursor: pointer;
+  color: rgb(133, 186, 118);
+}
+.sidebar-buttons button:hover {
+  color: rgb(91, 232, 91);
+}
+
+.App {
+  display: flex;
+}
+
+/* SIDEBAR STYLES */
+
+.cid {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 13px 10px 0px;
+}
+
+.cid input {
+  background-color: black;
+  border: 1px solid #966767;
+  color: rgb(134, 167, 166);
+  width: 50%;
+}
+
+.app-sidebar {
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid #cfb8ee;
+}
+
+.app-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 25px 20px 25px;
+}
+.app-sidebar-header h1 {
+  margin: 0;
+  background: -webkit-linear-gradient(
+    60deg,
+    rgb(220, 96, 96),
+    rgb(57, 194, 98)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-sidebar-notes {
+  height: calc(100vh - 78px);
+  overflow-y: scroll;
+}
+
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+}
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+}
+.app-sidebar-note button {
+  color: rgb(211, 127, 144);
+  font-size: 16px;
+  background: none;
+  border: 0px;
+}
+.app-sidebar-note button:hover {
+  color: rgb(225, 41, 78);
+  font-size: 16px;
+  background: none;
+  border: 0px;
+}
+
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+.app-sidebar-note small {
+  display: block;
+  color: rgb(196, 144, 144);
+}
+
+.app-sidebar-note:hover {
+  background: rgb(104, 76, 76);
+}
+.app-sidebar-note.active,
+.app-sidebar-note.active small {
+  background: rgb(67, 46, 46);
+  color: rgb(218, 174, 174);
+}
+
+/* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+
+.app-main {
+  width: 70%;
+  height: 100vh;
+}
+/*.app-main-note-edit,
+.app-main-note-preview {
+  height: 50vh;
+}*/
+
+.no-active-note {
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(121, 152, 137);
+}
+
+/* Editing */
+.app-main-note-edit {
+  padding: 25px;
+}
+
+.app-main-note-edit input,
+textarea {
+  display: block;
+  border: 1px solid #cfb8ee;
+  margin-bottom: 20px;
+  width: 100%;
+  /*height: calc(50vh - 130px);*/
+  height: calc(84vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: black;
+  color: rgb(228, 168, 178);
+}
+.app-main-note-edit input {
+  height: 50px;
+  font-size: 2rem;
+}
+
+.action-buttons {
+  padding: 0px 0px 10px 0px;
+}
+
+.action-buttons button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0px 10px 0px 0px;
+  font-size: 20px;
+  font-family: inherit;
+  cursor: pointer;
+  color: rgb(179, 167, 147);
+}
+
+.action-buttons button:hover {
+  color: rgb(91, 232, 91);
+}
+
+/* Preview */
+.app-main-note-preview {
+  border-top: 1px solid #cfb8ee;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.preview-title {
+  padding: 25px 25px 0 25px;
+  margin: 0;
+}
+
+.markdown-preview {
+  padding: 0 25px 25px 25px;
+  font-size: 1rem;
+  line-height: 2rem;
+}
