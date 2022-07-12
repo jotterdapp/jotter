@@ -16,8 +16,8 @@ function App() {
 
   const onAddNote = () => {
     const newNote = {
-      id: uuid(), //creates random id for new note... CHANGE this
-      title: "Untitled Note",
+      id: uuid(), //creates random id for new note... CHANGE this // TODO: Use UUIDv4
+      title: "Untitled Jotter Note",
       body: "",
       lastModified: Date.now(),
     };
@@ -47,6 +47,7 @@ function App() {
     console.log("retrieving notes");
     try {
       const storageClient = new Web3Storage({
+        // TODO: Use ENV
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDU3RTc1OTM1NjRGQmNmM0Y1MzlhMTcxNDcwNjg3ODU3ZGVmNWUwM2UiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTY5NjY5ODYwNDcsIm5hbWUiOiJ0ZXN0In0.68DNU0kn_y4zpO8K1VEMB5dDPWVIw8ai-V1CiPRVsyQ",
       });
@@ -70,6 +71,7 @@ function App() {
     }
   };
 
+  // Wallet Connect
   const connectWeb3 = async () => {
     if (isWeb3Connected) {
       return;
