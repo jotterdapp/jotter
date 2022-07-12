@@ -10,6 +10,7 @@ require("dotenv").config();
 
 const data = {};
 
+// Setup Orbit DB
 const setupOrbit = async () => {
   const ipfs = await IPFS.create({
     repo: "./orbitdb/examples/ipfs",
@@ -27,15 +28,21 @@ const setupOrbit = async () => {
   return await { nameService, userData };
 };
 
+// Use CORS for security
 app.use(cors());
+
+// Accept and parse JSON
 app.use(express.json());
 
 let client;
+
 async function connectToDb() {
   client = setupOrbit();
 }
+
 connectToDb();
 
+// Endpoint to get the CID's for an Owner
 app.get("/cids/:owner", (req, response) => {
   let res = data[req.params.owner];
   if (!res) {
@@ -48,6 +55,7 @@ app.get("/cids/:owner", (req, response) => {
   response.json(res);
 });
 
+// Endpoint to save a CID under a owner
 app.post("/send/:owner/:cid", (req, response) => {
   const { owner, cid } = req.params;
   const ownerData = data[owner];
@@ -59,6 +67,7 @@ app.post("/send/:owner/:cid", (req, response) => {
   response.send("success");
 });
 
+// Start the server
 app.listen(port, () => {
   console.log(`Listening on port ${port}!`);
 });
