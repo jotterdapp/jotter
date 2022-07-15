@@ -18,10 +18,8 @@ function Main({ activeNote, onUpdateNote, saveNoteDb }){
 
     const encrypt = () => {
         const ciphertext = cryptojs.AES.encrypt(activeNote.body, key).toString();
-        //const ciphertextTitle = cryptojs.AES.encrypt(activeNote.title, key).toString();
         onUpdateNote({
             ...activeNote,
-            //title: ciphertextTitle,
             body: ciphertext,
         });
     };
@@ -31,12 +29,8 @@ function Main({ activeNote, onUpdateNote, saveNoteDb }){
             const bytes  = cryptojs.AES.decrypt(activeNote.body, key);
             const originalText = bytes.toString(cryptojs.enc.Utf8);
 
-            //const bytesTitle = cryptojs.AES.decrypt(activeNote.title, key);
-            //const originalTitle = bytesTitle.toString(cryptojs.enc.Utf8);
-
             onUpdateNote({
                 ...activeNote,
-                //title: originalTitle,
                 body: originalText,
             });
         }
@@ -90,11 +84,7 @@ function Main({ activeNote, onUpdateNote, saveNoteDb }){
             <input className="encryption-box" type='text' id='key' placeholder="Enter encryption key here..." onChange={(e) => setKey(e.target.value)}/>
             <h3 id='cid'>Save this CID: {cid}</h3>
         </div>
-        {/*<div className="app-main-note-preview">
-            <h1 className="preview-title">{activeNote.title}</h1>
-            <ReactMarkdown className="markdown-preview">{activeNote.body}</ReactMarkdown>
-        </div>*/}
-    </div>;
+    </div>
 
 }
 
