@@ -1,8 +1,10 @@
 ## JOTTER!
 
-The note-taking standard for Web3
+Jotter is a Tauri based decentralized note-taking application for the web and desktop, written in Rust/JS.
 
-Find our quick demo here - https://youtu.be/JmC5LI6a8zs
+Jotter uses IPFS to store your notes securely, offering you a seamless experience at 0 cost.
+
+Find our quick demo of the MVP here - https://youtu.be/JmC5LI6a8zs
 
 ---
 
@@ -30,10 +32,11 @@ _Release_
 
 ### Roadmap
 
-- [x] Orbit DB Implementation
-- [ ] Implement rust ui using wasm bindings
-- [ ] Implement tags and note-taking widgets
+- [x] IPFS Implementation
+- [x] Wallet Integrations [Metamask, WalletConnect]
 - [ ] Use typescript everywhere
+- [ ] Implement an editor in Tauri (https://tauri.app/)
+- [ ] Implement tags and note-taking widgets
 
 ---
 
