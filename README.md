@@ -35,7 +35,7 @@ _Release_
 - [x] IPFS Implementation
 - [x] Wallet Integrations [Metamask, WalletConnect]
 - [ ] Use typescript everywhere
-- [ ] Implement an editor in Tauri (https://tauri.app/)
+- [x] Implement an editor in Tauri (https://tauri.app/)
 - [ ] Implement tags and note-taking widgets
 
 ---
