@@ -12,6 +12,7 @@ const data = {};
 
 // Setup Orbit DB
 const setupOrbit = async () => {
+  console.log("NOTION TIME");
   const ipfs = await IPFS.create({
     repo: "./orbitdb/examples/ipfs",
     start: true,
