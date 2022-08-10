@@ -18,7 +18,7 @@ const setupOrbit = async () => {
     start: true,
   });
   const orbitdb = await OrbitDB.createInstance(ipfs, {
-    directory: "./orbitdb/examples/keyvalue",
+    directory: "./orbitdb/examples/kv",
   });
 
   // Create / Open a database
